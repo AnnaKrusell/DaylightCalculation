@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/my-bim-app'),
+      dir: require('path').join(__dirname, './coverage/Glazing-Area'),
       subdir: '.',
       reporters: [
         { type: 'html' },

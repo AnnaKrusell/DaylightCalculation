@@ -1,0 +1,25 @@
+.row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.row:hover{
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.cell{
+    width: 100%;
+    background-color: #eee;
+}
+
+.expand-panel{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 20px;
+    border: 0.5px solid #ccc;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

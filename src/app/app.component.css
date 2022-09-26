@@ -1,0 +1,22 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    }
+    
+.table{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    }
+
+.table .header{
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+.table .cell{
+    width: 100%;
+    background-color: #eee;
+}
+        

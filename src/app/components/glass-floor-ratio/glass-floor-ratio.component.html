@@ -1,0 +1,18 @@
+
+
+<div class="row" *ngIf="gfrData" (click)="getGRF(gfrData.spaceURI, gfrData.pct)">
+    <div class="cell">{{gfrData.spaceName}}</div>
+    <div class="cell">{{gfrData.pct}}  </div>
+    </div>  
+
+    <!-- Expand panel -->
+<div class="expand-panel"  *ngIf="expanded">
+    <div >{{gfrData | json}}</div>  
+    <div >Details about each room: {{gfrData}}</div> 
+</div>
+
+
+
+
+
+

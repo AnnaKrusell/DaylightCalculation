@@ -1,4 +1,7 @@
-# MyBimApp
+# GlazingArea
+
+This app has been developed to calculate the glass to floor area for each room in a building. 
+When you have to check whether the daylight conditions in a project comply with building regulations, you check whether the glass to floor area is greater than 10 percent per room. In this calculation, the correction factors should be included. This app is intended as a pre-check, and therefore does not include the correction factors.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
 

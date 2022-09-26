@@ -1,0 +1,9 @@
+
+
+<div class="row" *ngIf="spaceData" (click)="clickedSpace(spaceData.URI)">
+    <div class="cell">{{spaceData.URI}}</div>
+    <div class="cell">{{spaceData.name}}</div> 
+</div>
+
+<!-- Expand panel -->
+<div class="expand-panel" *ngIf="expanded">{{spaceData | json}}</div>
