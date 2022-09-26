@@ -38,11 +38,9 @@ async getGRF(URI: string, pct: number){
   // colour room based in the procent
   if (pct < 10) 
   {
-      console.log('Red');
       this._colorService.colorSubsetGlobalIds(globalIds, "red", "space-hover")
   }
   else {
-    console.log('Green');
     this._colorService.colorSubsetGlobalIds(globalIds, "green", "space-hover")
   }
 

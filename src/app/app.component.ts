@@ -44,7 +44,6 @@ async onModelUpload(ev: any){
 
     
 exportResult(ev: any){
-  console.log("spaces")
   console.log(this.gfr)
   this.jsonExport = this._json_exportService.downloadFile(this.gfr)
   return this.jsonExport

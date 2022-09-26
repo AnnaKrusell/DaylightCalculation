@@ -13,7 +13,6 @@ export class JsonExportService {
     const jsonStr = JSON.stringify(myObj, null, "\t");
     this.toFile(jsonStr, "DaylightCalculatoin.json", "application/json");
     console.log("JSON export complete!")
-    console.log(jsonStr)
   }
 
   toFile(str: string, fileName: string = "file.txt", mimetype: string = "text/plain"): void{
