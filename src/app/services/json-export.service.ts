@@ -11,7 +11,7 @@ export class JsonExportService {
 
   downloadFile(myObj: any){
     const jsonStr = JSON.stringify(myObj, null, "\t");
-    this.toFile(jsonStr, "myFile.json", "application/json");
+    this.toFile(jsonStr, "DaylightCalculatoin.json", "application/json");
     console.log("JSON export complete!")
     console.log(jsonStr)
   }
