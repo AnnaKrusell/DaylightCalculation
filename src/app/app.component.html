@@ -4,30 +4,41 @@
       <input #ifcUpload type="file" (change)="onModelUpload($event)" style="display:none" accept=".ifc">
       <button mat-raised-button (click)="ifcUpload.click()">Upload IFC</button>  
 
-      <button mat-raised-button *ngIf="fileUploaded" (click)="spacesClicked = true">Calculate Glass to Floor Ratio</button>  
-      
+      <button mat-raised-button *ngIf="fileUploaded" (click)="spacesClicked = true">Beregn glass-til-gulv procenten</button>  
+        <table *ngIf="spacesClicked">
+          <tr>
+              <td>Korrektions faktor:</td>
+              <td>Ramme/karm faktor:</td>
+          </tr>
+          <tr>
+              <td><input type="text" id="correctionFactor" name="correctionFactor" value="0.8"  #correctionFactor></td>
+              <td><input type="text" id="frameFraction" name="frameFraction" value="0.7" #frameFraction></td>
+              <td><button type="button" (click)="getFractions(correctionFactor.value, frameFraction.value)">Opdatér værdier</button></td>
+          </tr>
+      </table>
+
       <div class="table" *ngIf="gfr.length">
         <div class="header" *ngIf="spacesClicked">
-              <div class="cell">Space Name</div>
-              <div class="cell">Glass to Floor Percent</div>
+              <div class="cell">Rumnavn</div>
+              <div class="cell">Glas-til-gulv procent</div>
         </div>
       <div *ngIf="spacesClicked">
         <app-glass-floor-ratio *ngFor="let ratio of gfr" [gfrData]="ratio"></app-glass-floor-ratio>
       </div>
     </div>
 
-     <button mat-raised-button *ngIf="receivedResults" (click)="exportResult($event)">Download Results</button>  
+     <button mat-raised-button *ngIf="receivedResults" (click)="exportResult($event)">Download rapport</button>  
     </as-split-area>
     
     <as-split-area [size]="60" style="position: relative; overflow: hidden;">
       <div *ngIf="receivedResults" style="display: flex; justify-content: space-around">
         <form action="/action_page.php">
           <fieldset>
-           <legend>Compliance with the Building Regulations:</legend>
-           <label for="fname">The room has a glass to floor percent BELOW 10: </label>
+           <legend>Overholdelse af bygningsreglementet:</legend>
+           <label for="fname">Rum med glas-til-gulv procent mindre end 10%: </label>
            <input type="text" style=" height: 20px; width: 20px; background-color: red;"><br><br>
           
-          <label for="fname">The room has a glass to floor percent ABOVE 10: </label>
+          <label for="fname">Rum med glas-til-gulv procent større end 10%: </label>
            <input type="text" style=" height: 20px; width: 20px; background-color: green;"><br><br>
           </fieldset>
          </form>

@@ -7,10 +7,11 @@
 
     <!-- Expand panel -->
 <div class="expand-panel"  *ngIf="expanded">
-    <div> Space Name: {{gfrData?.spaceName| json}}</div> 
-    <div> Space URI: {{gfrData?.spaceURI| json}}</div>  
-    <div> Floor Area: {{gfrData?.floorArea| json}}</div>
-    <div> Glass Area: {{gfrData?.windowArea| json}}</div>
+    <div> Rumnavn: {{gfrData?.spaceName| json}}</div>
+    <div> Rumtype: {{gfrData?.spaceLabel| json}}</div> 
+    <div> Rum URI: {{gfrData?.spaceURI| json}}</div>  
+    <div> Gulv areal: {{gfrData?.floorArea| json}} m2</div>
+    <div> Glas areal: {{gfrData?.windowArea| json}} m2</div>
     <div> Procent: {{gfrData?.pct| json}}</div>  
 </div>
 

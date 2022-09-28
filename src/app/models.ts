@@ -6,6 +6,7 @@ export interface Space{
 export interface GFR_Element{
     spaceURI: string;
     spaceName: string;
+    spaceLabel: string;
     floorArea: string;
     windowArea: string;
     pct: number;
