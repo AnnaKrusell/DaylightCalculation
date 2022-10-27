@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -23,6 +24,7 @@ import { GlassFloorRatioComponent } from './components/glass-floor-ratio/glass-f
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     AngularSplitModule,
     IfcViewerModule,
     MatButtonModule,

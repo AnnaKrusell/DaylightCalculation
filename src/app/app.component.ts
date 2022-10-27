@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { IFCProcessingService } from './services/ifc-processing.service';
 import { JsonExportService } from './services/json-export.service';
 import { ModelAddService } from './services/model-add.service';
 import { SpacesService } from './services/spaces.service';
@@ -23,7 +24,8 @@ export class AppComponent {
   constructor(
     private _modelAdd: ModelAddService,
     private _spaceService: SpacesService,
-    private _json_exportService: JsonExportService
+    private _json_exportService: JsonExportService,
+    private _ifcService: IFCProcessingService
   ) {}
 
   async onModelUpload(ev: any) {
@@ -35,6 +37,9 @@ export class AppComponent {
     let file: File = ev.target.files[0];
     await this._modelAdd.loadModel(file);
     console.log('Model loaded!');
+
+    // Send to IFC service to extract data
+    this._ifcService.testService(file);
 
     this.gfr = await this._spaceService.queryGRF();
     this.receivedResults = true;
