@@ -5,7 +5,7 @@
       <button mat-raised-button (click)="ifcUpload.click()">Upload IFC</button>  
 
       <button mat-raised-button *ngIf="fileUploaded" (click)="spacesClicked = true">Beregn glass-til-gulv procenten</button>  
-        <table *ngIf="spacesClicked">
+        <!-- <table *ngIf="spacesClicked">
           <tr>
               <td>Korrektions faktor:</td>
               <td>Ramme/karm faktor:</td>
@@ -15,7 +15,7 @@
               <td><input type="text" id="frameFraction" name="frameFraction" value="0.7" #frameFraction></td>
               <td><button type="button" (click)="getFractions(correctionFactor.value, frameFraction.value)">Opdatér værdier</button></td>
           </tr>
-      </table>
+      </table> -->
 
       <div class="table" *ngIf="gfr.length">
         <div class="header" *ngIf="spacesClicked">
